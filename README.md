@@ -2,7 +2,7 @@
 Simple MongoRDD to read data from MongoDB into Spark
 
 ## Build Status
-![MongoRDD Travis-CI Build Status](https://travis-ci.org/caffinc/mongordd.svg?branch=master)
+![MongoRDD Travis-CI Build Status](https://travis-ci.org/caffinc/MongoRDD.svg?branch=master)
 
 ## Dependencies
 
@@ -64,7 +64,7 @@ Usage in Java (Assume constants are the same):
 
 ## Tests
 
-There is just one extensive test, which launches an embedded MongoDB instance and writes dummy values into it and tests the MongoRDD on a local Spark instance. The test Works on my Machine™, but I'll ~~probably add Travis-CI soon.~~ try to get Travis-CI to work too.
+There is just one extensive test, which launches an embedded MongoDB instance and writes dummy values into it and tests the MongoRDD on a local Spark instance. The test Works on my Machine™ and Travis-CI (Which is awesome!).
 
 It might not work on your machine for the following reasons:
 
