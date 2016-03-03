@@ -61,7 +61,7 @@ Usage in Java (Assume constants are the same):
 
 ## Tests
 
-There is just one extensive test, which launches an embedded MongoDB instance and writes dummy values into it and tests the MongoRDD on a local Spark instance. The test Works on my Machine™, but I'll probably add Travis-CI soon.
+There is just one extensive test, which launches an embedded MongoDB instance and writes dummy values into it and tests the MongoRDD on a local Spark instance. The test Works on my Machine™, but I'll ~~probably add Travis-CI soon.~~ try to get Travis-CI to work too.
 
 It might not work on your machine for the following reasons:
 
@@ -77,7 +77,6 @@ There are a few things that can be done to extend this:
 * Make the RDD generic, and provide an interface to convert BSON documents to other formats before returning (This can be achieved with a simple call to `map()` so it wasn't done)
 * Make it available in Maven Central or Bintray
 * Add more tests
-* Add Travis-CI
 
 If you can help with one or more of the above, or if you have suggestions of your own, send me an email or raise a PR and I will review it and add it.
 
