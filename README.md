@@ -1,6 +1,9 @@
 # MongoRDD
 Simple MongoRDD to read data from MongoDB into Spark
 
+## Build Status
+![MongoRDD Travis-CI Build Status](https://travis-ci.org/caffinc/mongordd.svg?branch=master)
+
 ## Dependencies
 
 These are not absolute, but are current (probably) as of 3rd March, 2016. It should be trivial to upgrade or downgrade versions as required.
