@@ -121,7 +121,7 @@ public class MongoRDD extends RDD<Document> {
      *
      * @author Sriram
      */
-    private class MongoMapPartition implements Partition {
+    private static class MongoMapPartition implements Partition {
         private static final long serialVersionUID = 1L;
         private int index;
         private int from;
@@ -157,7 +157,7 @@ public class MongoRDD extends RDD<Document> {
          */
         @Override
         public boolean equals(Object obj) {
-            return (obj instanceof MongoMapPartition) && ((MongoMapPartition) obj).index != index;
+            return (obj instanceof MongoMapPartition) && ((MongoMapPartition) obj).index == index;
         }
 
         /**

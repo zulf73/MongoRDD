@@ -11,7 +11,7 @@ MongoRDD is on Bintray and Maven Central:
 	<dependency>
         <groupId>com.caffinc.sparktools</groupId>
         <artifactId>mongordd</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </dependency>
 
 MongoRDD extends the Spark RDD class and provides a way to read from MongoDB directly into Spark.

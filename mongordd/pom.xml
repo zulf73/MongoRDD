@@ -6,7 +6,7 @@
 
     <groupId>com.caffinc.sparktools</groupId>
     <artifactId>mongordd</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>Mongo RDD</name>
     <description>MongoDB RDD for Spark</description>
