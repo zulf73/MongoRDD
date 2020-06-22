@@ -58,7 +58,7 @@ public class MongoRDDTest {
                     mongodExecutable = starter.prepare(mongodConfig);
                     mongod = mongodExecutable.start();
                     //mongoClientUri = "mongodb://localhost:" + port;
-                    mongoClientUri = "mongodb://<username>:<password>@cluster0.3cmqe.mongodb.net/<dbname>?retryWrites=true&w=majority";
+                    mongoClientUri = "mongodb://unique:unique@cluster0-shard-00-02.3cmqe.mongodb.net:27017/";
                     MongoClient mongo = new MongoClient(new MongoClientURI(mongoClientUri));
                     MongoCollection collection = mongo.getDatabase(DATABASE).getCollection(COLLECTION);
 
