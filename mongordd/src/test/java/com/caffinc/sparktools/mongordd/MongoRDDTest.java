@@ -1,6 +1,8 @@
 package com.caffinc.sparktools.mongordd;
 
 import com.mongodb.*;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoCollection;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
 import de.flapdoodle.embed.mongo.MongodStarter;
@@ -28,8 +30,8 @@ import java.util.Map;
  */
 public class MongoRDDTest {
     private static final Logger LOG = LoggerFactory.getLogger(MongoRDDTest.class);
-    private static final String DATABASE = "testMongoRDD";
-    private static final String COLLECTION = "testCollection";
+    private static final String DATABASE = "test";
+    private static final String COLLECTION = "emailsvc";
 
     private static MongodExecutable mongodExecutable = null;
     private static MongodProcess mongod = null;
@@ -55,9 +57,20 @@ public class MongoRDDTest {
 
                     mongodExecutable = starter.prepare(mongodConfig);
                     mongod = mongodExecutable.start();
-                    mongoClientUri = "mongodb://localhost:" + port;
+                    //mongoClientUri = "mongodb://localhost:" + port;
+                    mongoClientUri = "mongodb://<username>:<password>@cluster0.3cmqe.mongodb.net/<dbname>?retryWrites=true&w=majority";
                     MongoClient mongo = new MongoClient(new MongoClientURI(mongoClientUri));
-                    mongo.getDatabase(DATABASE).getCollection(COLLECTION).insertMany(generateDummyDocuments());
+                    MongoCollection collection = mongo.getDatabase(DATABASE).getCollection(COLLECTION);
+
+                    MongoCursor<Document> cursor = collection.find().iterator();
+                    try {
+                        while (cursor.hasNext()) {
+                        //System.out.println(cursor.next().toJson());
+                        LOG.info(cursor.next().toJson());
+                        }
+                    } finally {
+                        cursor.close();
+                    }
                     mongo.close();
                     LOG.info("Wrote dummy database entries");
                 } catch (Exception e) {
